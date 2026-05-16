@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Mwibiri Kuria | Professional Portfolio</title>
+    <style>
+        :root {
+            --bg-primary: #0a192f;
+            --bg-secondary: #112240;
+            --text-title: #ccd6f6;
+            --text-body: #8892b0;
+            --accent-blue: #3b82f6;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-red: #ef4444;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-body);
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        header {
+            padding: 80px 0 40px 0;
+            border-bottom: 1px solid #233554;
+        }
+
+        .cffe-badge {
+            display: inline-block;
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--accent-blue);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        h1 {
+            color: var(--text-title);
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero-p {
+            max-width: 700px;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        /* Buttons & Badges */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Grid Layouts */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 60px 0;
+        }
+
+        .skill-card {
+            background-color: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 6px;
+            border-bottom: 3px solid var(--accent-blue);
+        }
+
+        .skill-card h3 {
+            color: var(--text-title);
+            margin-bottom: 10px;
+        }
+
+        /* Case Study Section */
+        .section-title {
+            color: var(--text-title);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            height: 1px;
+            flex-grow: 1;
+            background-color: #233554;
+        }
+
+        .case-study {
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+
+        .case-header {
+            margin-bottom: 25px;
+        }
+
+        .case-tag {
+            background-color: var(--accent-red);
+            color: var(--white);
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .case-title {
+            color: var(--white);
+            margin-top: 10px;
+            font-size: 1.5rem;
+        }
+
+        /* Risk Table */
+        .risk-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.95rem;
+        }
+
+        .risk-table th {
+            background-color: rgba(255,255,255,0.05);
+            color: var(--text-title);
+            text-align: left;
+            padding: 12px;
+        }
+
+        .risk-table td {
+            padding: 12px;
+            border-bottom: 1px solid #233554;
+        }
+
+        .badge {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .b-crit { background: rgba(239, 68, 68, 0.2); color: var(--accent-red); }
+        .b-high { background: rgba(245, 158, 11, 0.2); color: var(--accent-orange); }
+
+        /* Article Card */
+        .article-card {
+            background-color: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 60px;
+            border-left: 4px solid var(--accent-green);
+        }
+
+        .article-title {
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            color: var(--text-body);
+            border-top: 1px solid #233554;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="cffe-badge">CFFE Candidate | KCA University</div>
+            <h1>Samuel Mwibiri Kuria</h1>
+            <div class="subtitle">Security Operations & Forensic Data Analyst</div>
+            <p class="hero-p">
+                Specializing in risk-based monitoring systems, automated internal controls, and procurement fraud detection. Experienced in transforming high-volume operational records into structured security intelligence designed for executive intervention.
+            </p>
+            <a href="#contact" class="btn">Available for Remote & Permanent Roles</a>
+        </header>
+
+        <section class="skills-grid">
+            <div class="skill-card">
+                <h3>Forensic Audit</h3>
+                <p>Isolating sophisticated transaction outliers and unauthorized system control bypasses.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Automated Controls</h3>
+                <p>Building rule-based threshold alert systems utilizing advanced conditional data modeling.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Risk Intelligence</h3>
+                <p>Translating statistical data sets into clean executive briefs and tactical action frameworks.</p>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <div class="section-title">Featured Case Study</div>
+            
+            <div class="case-study">
+                <div class="case-header">
+                    <span class="case-tag">Critical Outlier Detected</span>
+                    <h3 class="case-title">Forensic Assessment of Procurement Expenditure Anomalies</h3>
+                </div>
+                
+                <p>
+                    Conducted a complete data integrity audit on historical operational accounts. By building custom standard deviation parameters, I engineered an automated oversight dashboard that immediately isolated a severe expenditure concentration anomaly representing <strong>94% of total localized category spend (Ksh 15,000,000.00)</strong> within a single transaction.
+                </p>
+
+                <table class="risk-table">
+                    <thead>
+                        <thead>
+                            <tr>
+                                <th>Risk Entity Account</th>
+                                <th>Exposure Value</th>
+                                <th>Primary Risk Marker</th>
+                                <th>Priority Metric</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Primary Sector Vendor</td>
+                                <td>Ksh 15,150,000.00</td>
+                                <td>Single-Transaction Outlier / Core Threshold Breach</td>
+                                <td><span class="badge b-crit">CRITICAL</span></td>
+                            </tr>
+                            <tr>
+                                <td>Unverified Accounts / Cash</td>
+                                <td>Ksh 300,000.00</td>
+                                <td>Disbursement Transparency Gaps</td>
+                                <td><span class="badge b-high">HIGH RISK</span></td>
+                            </tr>
+                        </tbody>
+                    </thead>
+                </table>
+
+                <p>
+                    The outcome of this intervention provided senior management with immediate clarity on internal authorization vulnerabilities, yielding a newly optimized cross-departmental verification protocol.
+                </p>
+            </div>
+        </section>
+
+        <section id="articles">
+            <div class="section-title">Published Insights</div>
+            
+            <div class="article-card">
+                <h3 class="article-title">Automating Corporate Fraud and Risk Detection Using Logic-Driven Frameworks</h3>
+                <p style="margin-bottom: 20px;">
+                    "Applying Conditional Formatting is one of the most effective ways to automate fraud detection. It allows Excel to act as an active monitoring system that flags risks the exact moment data is captured, entirely bypassing the limitations of slow, manual line-by-line verification..."
+                </p>
+                <p style="font-size: 0.9rem; color: var(--accent-green); font-weight: bold;">
+                    Featured Full-Length Article Published on LinkedIn
+                </p>
+            </div>
+        </section>
+
+        <section id="contact" style="padding-bottom: 60px;">
+            <div class="section-title">Professional Engagement</div>
+            <p style="margin-bottom: 20px; max-width: 600px;">
+                Looking to add a rigorous, analytical edge to your risk compliance or remote security operations pipeline? Let's connect to review how these automated control architectures can be adapted to secure your operational workflow.
+            </p>
+            <a href="https://www.linkedin.com" target="_blank" class="btn" style="background-color: transparent; border: 1px solid var(--accent-blue); color: var(--accent-blue);">Connect on LinkedIn</a>
+        </section>
+
+        <footer>
+            <p>© 2026 Samuel Mwibiri Kuria. Portfolio Architecture optimized for Professional Review.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
