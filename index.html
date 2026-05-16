@@ -8,11 +8,19 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #2d3748; line-height: 1.6; margin: 0; background-color: #f7fafc; }
         header { background-color: #1a365d; color: white; padding: 40px 20px; text-align: center; }
         header h1 { margin: 0; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px; }
-        header p { margin: 10px 0 0 0; font-size: 1.1rem; color: #cbd5e0; }
+        header p { margin: 10px 0 0 0; font-size: 11rem; color: #cbd5e0; }
         .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
         .card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 30px; margin-bottom: 30px; border: 1px solid #e2e8f0; }
         h2 { color: #2b6cb0; font-size: 1.6rem; border-left: 5px solid #2b6cb0; padding-left: 12px; margin-top: 0; }
         .alert-box { background-color: #fff5f5; border-left: 5px solid #c53030; padding: 15px; color: #9b2c2c; font-weight: bold; margin: 20px 0; border-radius: 4px; }
+        
+        /* VISUAL PROGRESS METER INDICATORS */
+        .chart-container { margin: 25px 0; background-color: #edf2f7; padding: 20px; border-radius: 6px; border: 1px solid #e2e8f0; }
+        .chart-label { font-weight: bold; font-size: 1rem; color: #2d3748; margin-bottom: 8px; display: block; }
+        .progress-bar-bg { background-color: #e2e8f0; border-radius: 20px; width: 100%; height: 24px; overflow: hidden; position: relative; }
+        .progress-bar-fill-critical { background-color: #c53030; height: 100%; border-radius: 20px; width: 94%; text-align: right; }
+        .progress-bar-text { color: white; font-size: 0.85rem; font-weight: bold; padding-right: 10px; line-height: 24px; }
+        
         table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.95rem; }
         th { background-color: #2d3748; color: white; padding: 12px; text-align: left; text-transform: uppercase; }
         td { padding: 12px; border-bottom: 1px solid #e2e8f0; }
@@ -21,7 +29,6 @@
         .badge-high { background-color: #feebc8; color: #9c4221; }
         .footer { text-align: center; padding: 40px 20px; color: #a0aec0; font-size: 0.9rem; border-top: 1px solid #e2e8f0; margin-top: 60px; }
         .btn { display: inline-block; background-color: #2b6cb0; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 15px; }
-        .btn:hover { background-color: #2c5282; }
     </style>
 </head>
 <body>
@@ -40,6 +47,20 @@
             
             <div class="alert-box">
                 CRITICAL ANOMALY SURFACED: A single transaction (TR-1620) was isolated representing Ksh 15,000,000.00—constituting 94% of the department's entire annual procurement expenditure. This indicates a high probability of authorization bypass.
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Visual Data Metrics & Expenditure Concentration</h2>
+            <p>Below is the visual visualization of the expenditure concentration anomaly that triggered our investigation flag:</p>
+            
+            <div class="chart-container">
+                <span class="chart-label">🚨 Target Transaction (TR-1620) Share of Security Budget</span>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill-critical">
+                        <span class="progress-bar-text">94% of Budget</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -81,10 +102,6 @@
                 <li><strong>Log Reconciliation:</strong> Cross-verify transaction TR-1620 retroactively against physical gate entry logs and validated delivery notes.</li>
                 <li><strong>Continuous Monitoring:</strong> Deploy automated dashboard flag alerts inside the accounting workflow to catch variance spikes before payment dispatch.</li>
             </ul>
-            
-            <center>
-                <a href="https://www.linkedin.com" class="btn">Connect with me on LinkedIn</a>
-            </center>
         </div>
 
     </div>
