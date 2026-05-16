@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samuel Mwibiri Kuria | Forensic Audit & Security Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #2d3748; line-height: 1.6; margin: 0; background-color: #f7fafc; }
         header { background-color: #1a365d; color: white; padding: 40px 20px; text-align: center; }
         header h1 { margin: 0; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px; }
-        header p { margin: 10px 0 0 0; font-size: 11rem; color: #cbd5e0; }
+        header p { margin: 10px 0 0 0; font-size: 1.1rem; color: #cbd5e0; }
         .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
         .card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 30px; margin-bottom: 30px; border: 1px solid #e2e8f0; }
         h2 { color: #2b6cb0; font-size: 1.6rem; border-left: 5px solid #2b6cb0; padding-left: 12px; margin-top: 0; }
         .alert-box { background-color: #fff5f5; border-left: 5px solid #c53030; padding: 15px; color: #9b2c2c; font-weight: bold; margin: 20px 0; border-radius: 4px; }
         
-        /* VISUAL PROGRESS METER INDICATORS */
-        .chart-container { margin: 25px 0; background-color: #edf2f7; padding: 20px; border-radius: 6px; border: 1px solid #e2e8f0; }
-        .chart-label { font-weight: bold; font-size: 1rem; color: #2d3748; margin-bottom: 8px; display: block; }
-        .progress-bar-bg { background-color: #e2e8f0; border-radius: 20px; width: 100%; height: 24px; overflow: hidden; position: relative; }
-        .progress-bar-fill-critical { background-color: #c53030; height: 100%; border-radius: 20px; width: 94%; text-align: right; }
-        .progress-bar-text { color: white; font-size: 0.85rem; font-weight: bold; padding-right: 10px; line-height: 24px; }
-        
+        /* CHART DISPLAY STYLES */
+        .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        @media(max-width: 768px) { .charts-grid { grid-template-columns: 1fr; } }
+        .chart-box { background: #fafafa; border: 1px solid #e2e8f0; padding: 15px; border-radius: 6px; text-align: center; }
+        canvas { max-width: 100%; height: auto; }
+
         table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.95rem; }
         th { background-color: #2d3748; color: white; padding: 12px; text-align: left; text-transform: uppercase; }
         td { padding: 12px; border-bottom: 1px solid #e2e8f0; }
@@ -28,7 +28,6 @@
         .badge-critical { background-color: #fed7d7; color: #9b2c2c; }
         .badge-high { background-color: #feebc8; color: #9c4221; }
         .footer { text-align: center; padding: 40px 20px; color: #a0aec0; font-size: 0.9rem; border-top: 1px solid #e2e8f0; margin-top: 60px; }
-        .btn { display: inline-block; background-color: #2b6cb0; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 15px; }
     </style>
 </head>
 <body>
@@ -42,7 +41,7 @@
         
         <div class="card">
             <h2>Forensic Assessment Case Study: Expenditure Anomalies</h2>
-            <p><strong>Date:</strong> Portfolio Reference | <strong>Focus:</strong> Corporate Procurement & Risk Management</p>
+            <p><strong>Focus:</strong> Corporate Procurement & Risk Management</p>
             <p>This report presents findings from a forensic data assessment of departmental expenditure. The primary objective was to demonstrate the identification of internal control weaknesses and significant financial outliers within a high-volume procurement environment.</p>
             
             <div class="alert-box">
@@ -51,15 +50,17 @@
         </div>
 
         <div class="card">
-            <h2>Visual Data Metrics & Expenditure Concentration</h2>
-            <p>Below is the visual visualization of the expenditure concentration anomaly that triggered our investigation flag:</p>
+            <h2>Visual Data Analytics Dashboard</h2>
+            <p>The interactive elements below display the raw fiscal concentration metrics calculated during the audit assessment:</p>
             
-            <div class="chart-container">
-                <span class="chart-label">🚨 Target Transaction (TR-1620) Share of Security Budget</span>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill-critical">
-                        <span class="progress-bar-text">94% of Budget</span>
-                    </div>
+            <div class="charts-grid">
+                <div class="chart-box">
+                    <h3>Expenditure Concentration</h3>
+                    <canvas id="pieChart"></canvas>
+                </div>
+                <div class="chart-box">
+                    <h3>High-Risk Vendor Variance (KES)</h3>
+                    <canvas id="barChart"></canvas>
                 </div>
             </div>
         </div>
@@ -109,6 +110,53 @@
     <div class="footer">
         Portfolio Case Study Platform • Developed by Samuel Mwibiri Kuria © 2026
     </div>
+
+    <script>
+        // 1. Render Pie Chart
+        const ctxPie = document.getElementById('pieChart').getContext('2d');
+        new Chart(ctxPie, {
+            type: 'pie',
+            data: {
+                labels: ['Target Anomaly (TR-1620)', 'All Other Departmental Spend'],
+                datasets: [{
+                    data: [94, 6],
+                    backgroundColor: ['#c53030', '#cbd5e0'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        // 2. Render Bar Chart
+        const ctxBar = document.getElementById('barChart').getContext('2d');
+        new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: ['Primary Security Vendor', 'Secondary Unverified Vendor'],
+                datasets: [{
+                    label: 'Expenditure Value (KES)',
+                    data: [15150000, 300000],
+                    backgroundColor: ['#1a365d', '#feebc8'],
+                    borderColor: ['#1a365d', '#9c4221'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
