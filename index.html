@@ -31,14 +31,23 @@
         
         /* DASHBOARD COMPONENT GRIDS */
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 15px; }
+        @media(max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
         @media(max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
         
-        /* CERTIFICATE CARDS */
+        /* CERTIFICATE & COMPETENCY CARDS */
         .cert-item { background: #f8fafc; border-left: 4px solid #1a365d; padding: 15px; border-radius: 4px; border: 1px solid #e2e8f0; border-left: 4px solid #2b6cb0; }
         .cert-item h3 { margin: 0 0 4px 0; font-size: 1.05rem; color: #1a365d; }
         .cert-item .issuer { margin: 0; font-weight: bold; color: #4a5568; font-size: 0.9rem; }
         .cert-item .date { margin: 0 0 8px 0; font-style: italic; color: #718096; font-size: 0.85rem; }
         .cert-item .desc { margin: 0; font-size: 0.9rem; color: #4a5568; text-align: justify; }
+
+        /* COMPETENCY PILLAR STYLE Extensions */
+        .comp-card { background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #1a365d; padding: 20px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: transform 0.2s ease; }
+        .comp-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(26,54,93,0.08); }
+        .comp-card h3 { margin: 0 0 10px 0; font-size: 1.1rem; color: #1a365d; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px; text-transform: uppercase; font-weight: bold; letter-spacing: 0.3px; }
+        .comp-card ul { padding-left: 18px; margin: 0; font-size: 0.92rem; color: #4a5568; }
+        .comp-card li { margin-bottom: 6px; }
 
         /* VISUAL FEED MODULES */
         .chart-box { background: #fafafa; border: 1px solid #d2d6dc; padding: 20px; border-radius: 4px; text-align: center; }
@@ -81,6 +90,40 @@
             <p class="profile-text">
                 Methodical and highly analytical Criminology and Security Studies professional specializing in corporate asset protection, data-driven fraud detection, and open-source intelligence (OSINT) workflows. Experienced in implementing continuous process-monitoring frameworks, isolating transactional control bypasses, and maintaining structured evidentiary asset trails. Leverages a technology-first approach to trace financial vulnerabilities, optimize organizational governance, and provide executive stakeholders with high-integrity risk analytics remediation strategies.
             </p>
+        </div>
+
+        <div class="card">
+            <h2>Core Competency & Experience Profile</h2>
+            <p>A specialized, multi-dimensional matrix illustrating on-the-ground tactical execution balanced with advanced surveillance analytics and governance frameworks:</p>
+            
+            <div class="grid-3">
+                <div class="comp-card" style="border-top-color: #1a365d;">
+                    <h3>🖥️ Surveillance & CCTV Operations</h3>
+                    <ul>
+                        <li><strong>Live Threat Detection:</strong> Active array monitoring across complex perimeters to isolate unauthorized access breaches.</li>
+                        <li><strong>Forensic Retrieval:</strong> Timeline analysis and video log matching to generate ironclad investigative incident files.</li>
+                        <li><strong>Control Room Command:</strong> Optimizing telemetry equipment uptime and radio linkages to active response teams.</li>
+                    </ul>
+                </div>
+
+                <div class="comp-card" style="border-top-color: #2b6cb0;">
+                    <h3>🔍 Fraud Vetting & Data Analytics</h3>
+                    <ul>
+                        <li><strong>Control Vetting:</strong> Identification of supply chain bypass patterns and corporate procurement vulnerabilities.</li>
+                        <li><strong>Risk Analytics:</strong> Processing financial logs using MS Excel formulas to uncover hidden transaction outliers.</li>
+                        <li><strong>OSINT Profiling:</strong> Utilizing open-source intelligence frameworks for vendor verification and background audits.</li>
+                    </ul>
+                </div>
+
+                <div class="comp-card" style="border-top-color: #4a5568;">
+                    <h3>⚡ Personnel Leadership & Field Command</h3>
+                    <ul>
+                        <li><strong>Guard Force Direction:</strong> Structuring shift rotations, guard protocols, and maintaining strict post discipline.</li>
+                        <li><strong>Account Liaison:</strong> Conducting high-profile corporate account asset reviews and venue threat assessments.</li>
+                        <li><strong>Crisis Deployment:</strong> Facilitating rapid emergency response and seamless operational coordination with state security organs.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <div class="card">
